@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using DotNetFourFiveTwo.Repositories;
+using DotNetFourFiveTwo.Services;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace DotNetFourFiveTwo.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly OrderService _orderService;
+
+        public HomeController()
+        {
+            _orderService = new OrderService(new OrderRepository());
+        }
+
+        public async Task<ActionResult> Index()
         {
             ViewBag.Title = "Home Page";
 
-            return View();
+            var countryOrderResult = await _orderService.GetCountryOrderCountWithFlag();
+
+            return View(countryOrderResult);
         }
     }
 }
