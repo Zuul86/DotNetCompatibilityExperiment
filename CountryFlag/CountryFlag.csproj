@@ -6,6 +6,7 @@
     <Version>1.0.1</Version>
     <PackageReleaseNotes>Added country code mapping</PackageReleaseNotes>
     <Description>Retrives flag URLs for countryflags.io</Description>
+    <PackageId>DotNetCompatibiltyDemo.CountryFlag</PackageId>
   </PropertyGroup>
 
 </Project>
