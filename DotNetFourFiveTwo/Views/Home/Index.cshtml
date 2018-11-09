@@ -3,6 +3,7 @@
     @foreach(var country in Model)
     {
     <tr>
+        <td><img src="@country.FlagUrl" /></td>
         <td style="width: 200px">@country.CountryName</td>
         <td>@country.OrderCount</td>
     </tr>
